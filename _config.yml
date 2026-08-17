@@ -1,0 +1,16 @@
+title: "Project Portfolio"
+description: "My Project Portfolio inspired by Feeling Responsive Template"
+url: "https://mosyrf.github.io"
+baseurl: ""
+
+author:
+  name: "Mo"
+  bio: "Electronics Enthusiast"
+
+markdown: kramdown
+permalink: /:categories/:title/
+exclude: ["vendor", "README.md"]
+collections:
+  projects:
+    output: true
+    permalink: /projects/:name/
