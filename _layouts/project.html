@@ -1,4 +1,29 @@
 ---
 layout: default
 ---
-<article class="content-layout with-sidebar"><section class="content"><div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ '/projects/' | relative_url }}">Portfolio</a> / {{ page.title }}</div><h1>{{ page.title }}</h1>{% if page.image %}<img class="project-image" src="{{ page.image | relative_url }}" alt="{{ page.title }}">{% endif %}<p class="lead">{{ page.summary }}</p>{{ content }}</section><aside class="sidebar"><h3>Project</h3><p><strong>Role:</strong><br>{{ page.role }}</p><p><strong>Stack:</strong><br>{{ page.stack }}</p>{% if page.url_external %}<a class="button" href="{{ page.url_external }}">Visit Project</a>{% endif %}</aside></article>
+
+<article class="content-layout with-sidebar">
+  <section class="content">
+    <div class="breadcrumbs">
+      <a href="{{ '/' | relative_url }}">Home</a> /
+      <a href="{{ '/projects/' | relative_url }}">Portfolio</a> / {{ page.title
+      }}
+    </div>
+    <h1>{{ page.title }}</h1>
+    {% if page.image %}<img
+      class="project-image"
+      src="{{ page.image | relative_url }}"
+      alt="{{ page.title }}"
+    />{% endif %}
+    <p class="lead">{{ page.summary }}</p>
+    {{ content }}
+  </section>
+  <aside class="sidebar">
+    <h3>Project</h3>
+    <p><strong>Role:</strong><br />{{ page.role }}</p>
+    <p><strong>Stack:</strong><br />{{ page.stack }}</p>
+    {% if page.url_external %}<a class="button" href="{{ page.url_external }}"
+      >Visit Project</a
+    >{% endif %}
+  </aside>
+</article>

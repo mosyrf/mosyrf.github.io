@@ -1,1 +1,157 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{ page.title }} | {{ site.title }}</title><link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}"></head><body><header class="topbar"><div class="wrap navwrap"><a class="brand" href="{{ '/' | relative_url }}">MO<span>.</span></a><nav>{% for item in site.data.navigation %}<a href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endfor %}</nav><div class="social"><a href="{{ site.data.socialmedia.github }}">GitHub</a><a href="{{ site.data.socialmedia.linkedin }}">LinkedIn</a></div></div></header>{% if page.hero %}<section class="hero" style="background-image:url('{{ page.hero | relative_url }}')"><div class="hero-overlay"><div class="wrap"><p class="eyebrow">{{ page.hero_label | default: 'PORTFOLIO' }}</p><h1>{{ page.title }}</h1>{% if page.subtitle %}<p>{{ page.subtitle }}</p>{% endif %}</div></div></section>{% endif %}<main class="wrap page-shell">{{ content }}</main><footer><div class="wrap footer-grid"><div><strong>MO.</strong><p>Building useful digital experiences with thoughtful design and clean code.</p></div><div><strong>Connect</strong><p><a href="{{ site.data.socialmedia.github }}">GitHub</a><br><a href="{{ site.data.socialmedia.linkedin }}">LinkedIn</a><br><a href="{{ site.data.socialmedia.email }}">Email</a></p></div></div><div class="copyright">© {{ site.time | date: '%Y' }} Mo. Built with Jekyll.</div></footer></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>
+      {% if page.title %} {{ page.title }} | {{ site.title }} {% else %} {{
+      site.title }} {% endif %}
+    </title>
+
+    <link
+      rel="stylesheet"
+      href="{{ '/assets/css/style.css' | relative_url }}"
+    />
+  </head>
+
+  <body>
+    <!-- =========================
+       HEADER
+       ========================= -->
+
+    <header class="topbar">
+      <div class="wrap navwrap">
+        <!-- Logo -->
+        <a class="brand" href="{{ '/' | relative_url }}"> MO<span>.</span> </a>
+
+        <!-- Navigation -->
+        <nav class="main-nav">
+          {% for item in site.data.navigation %}
+
+          <a href="{{ item.url | relative_url }}"> {{ item.title }} </a>
+
+          {% endfor %}
+        </nav>
+
+        <!-- Social Links -->
+        <div class="social">
+          {% if site.data.socialmedia.github %}
+          <a
+            href="{{ site.data.socialmedia.github.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          {% endif %} {% if site.data.socialmedia.linkedin %}
+          <a
+            href="{{ site.data.socialmedia.linkedin.url }}"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+          {% endif %}
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+       HERO
+       ========================= -->
+
+    {% if page.hero %}
+
+    <section
+      class="hero"
+      style="background-image: url('{{ page.hero | relative_url }}')"
+    >
+      <div class="hero-overlay">
+        <div class="wrap">
+          <p class="eyebrow">{{ page.hero_label | default: 'PORTFOLIO' }}</p>
+
+          <h1>{{ page.title }}</h1>
+
+          {% if page.subtitle %}
+
+          <p>{{ page.subtitle }}</p>
+
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    {% endif %}
+
+    <!-- =========================
+       MAIN CONTENT
+       ========================= -->
+
+    <main class="wrap page-shell">{{ content }}</main>
+
+    <!-- =========================
+       FOOTER
+       ========================= -->
+
+    <footer>
+      <div class="wrap footer-grid">
+        <!-- Footer About -->
+
+        <div>
+          <strong>MO.</strong>
+
+          <p>
+            Building useful digital experiences with thoughtful design and clean
+            code.
+          </p>
+        </div>
+
+        <!-- Footer Social -->
+
+        <div>
+          <strong>Connect</strong>
+
+          <p>
+            {% if site.data.socialmedia.github %}
+
+            <a
+              href="{{ site.data.socialmedia.github.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+
+            <br />
+
+            {% endif %} {% if site.data.socialmedia.linkedin %}
+
+            <a
+              href="{{ site.data.socialmedia.linkedin.url }}"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+
+            <br />
+
+            {% endif %} {% if site.data.socialmedia.email %}
+
+            <a href="{{ site.data.socialmedia.email.url }}"> Email </a>
+
+            {% endif %}
+          </p>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+
+      <div class="copyright">
+        © {{ site.time | date: '%Y' }} Mo. Built with Jekyll.
+      </div>
+    </footer>
+  </body>
+</html>
