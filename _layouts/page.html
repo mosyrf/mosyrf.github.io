@@ -1,25 +1,29 @@
 ---
 layout: default
 ---
-
 <article class="content-layout {% if page.sidebar %}with-sidebar{% endif %}">
   <section class="content">
-    <div class="breadcrumbs">
-      <a href="{{ '/' | relative_url }}">Home</a> / {{ page.title }}
-    </div>
+    <div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / {{ page.title }}</div>
+    <p class="eyebrow">{{ page.kicker | default: 'ABOUT THE WORK' }}</p>
     <h1>{{ page.title }}</h1>
     {{ content }}
   </section>
+
   {% if page.sidebar %}
-  <aside class="sidebar">
-    <h3>About Me</h3>
-    <p>{{ site.description }}</p>
-    <h3>Explore</h3>
-    <ul>
-      <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-      <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
-      <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-    </ul>
-  </aside>
+    <aside class="sidebar">
+      <div class="sidebar-block">
+        <p class="sidebar-label">Profile</p>
+        <h3>{{ site.author.short_name }}</h3>
+        <p>{{ site.author.bio }}</p>
+      </div>
+      <div class="sidebar-block">
+        <p class="sidebar-label">Explore</p>
+        <ul>
+          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
+          <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
+          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+        </ul>
+      </div>
+    </aside>
   {% endif %}
 </article>

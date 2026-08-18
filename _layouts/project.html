@@ -2,28 +2,46 @@
 layout: default
 ---
 
-<article class="content-layout with-sidebar">
+<article class="content-layout with-sidebar project-detail">
   <section class="content">
     <div class="breadcrumbs">
       <a href="{{ '/' | relative_url }}">Home</a> /
-      <a href="{{ '/projects/' | relative_url }}">Portfolio</a> / {{ page.title
+      <a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.title
       }}
     </div>
+    <p class="eyebrow">PROJECT CASE STUDY</p>
     <h1>{{ page.title }}</h1>
-    {% if page.image %}<img
-      class="project-image"
-      src="{{ page.image | relative_url }}"
-      alt="{{ page.title }}"
-    />{% endif %}
+
+    <div
+      class="project-hero-card {{ page.visual | default: 'visual-default' }}"
+    >
+      <span class="visual-number">PROJECT</span>
+      <span class="visual-short">{{ page.short }}</span>
+      <span class="visual-mark"></span>
+    </div>
+
     <p class="lead">{{ page.summary }}</p>
     {{ content }}
   </section>
+
   <aside class="sidebar">
-    <h3>Project</h3>
-    <p><strong>Role:</strong><br />{{ page.role }}</p>
-    <p><strong>Stack:</strong><br />{{ page.stack }}</p>
-    {% if page.url_external %}<a class="button" href="{{ page.url_external }}"
-      >Visit Project</a
-    >{% endif %}
+    <div class="sidebar-block">
+      <p class="sidebar-label">Project</p>
+      <h3>{{ page.role }}</h3>
+      <p><strong>Stack</strong><br />{{ page.stack }}</p>
+    </div>
+    {% if page.url_external %}
+    <a
+      class="button button-full"
+      href="{{ page.url_external }}"
+      target="_blank"
+      rel="noopener noreferrer"
+      >Visit project</a
+    >
+    {% endif %}
+    <div class="sidebar-block">
+      <p class="sidebar-label">Next</p>
+      <a href="{{ '/projects/' | relative_url }}">Back to Projects →</a>
+    </div>
   </aside>
 </article>

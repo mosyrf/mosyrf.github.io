@@ -1,157 +1,68 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.lang | default: 'en' }}">
   <head>
     <meta charset="utf-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>
-      {% if page.title %} {{ page.title }} | {{ site.title }} {% else %} {{
-      site.title }} {% endif %}
-    </title>
-
-    <link
-      rel="stylesheet"
-      href="{{ '/assets/css/style.css' | relative_url }}"
-    />
+    <meta name="description" content="{{ page.description | default: site.description | escape }}" />
+    <title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}" />
   </head>
 
   <body>
-    <!-- =========================
-       HEADER
-       ========================= -->
-
     <header class="topbar">
       <div class="wrap navwrap">
-        <!-- Logo -->
-        <a class="brand" href="{{ '/' | relative_url }}"> MO<span>.</span> </a>
+        <a class="brand" href="{{ '/' | relative_url }}" aria-label="Home">MO<span>.</span></a>
 
-        <!-- Navigation -->
-        <nav class="main-nav">
+        <nav class="main-nav" aria-label="Main navigation">
           {% for item in site.data.navigation %}
-
-          <a href="{{ item.url | relative_url }}"> {{ item.title }} </a>
-
+            <a href="{{ item.url | relative_url }}"{% if page.url == item.url %} class="active"{% endif %}>{{ item.title }}</a>
           {% endfor %}
         </nav>
 
-        <!-- Social Links -->
-        <div class="social">
-          {% if site.data.socialmedia.github %}
-          <a
-            href="{{ site.data.socialmedia.github.url }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            GitHub
-          </a>
-          {% endif %} {% if site.data.socialmedia.linkedin %}
-          <a
-            href="{{ site.data.socialmedia.linkedin.url }}"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            LinkedIn
-          </a>
-          {% endif %}
+        <div class="social" aria-label="Social links">
+          {% for network in site.data.socialmedia %}
+            {% assign item = network[1] %}
+            <a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener noreferrer"{% endunless %}>{{ item.label }}</a>
+          {% endfor %}
         </div>
       </div>
     </header>
 
-    <!-- =========================
-       HERO
-       ========================= -->
-
     {% if page.hero %}
-
-    <section
-      class="hero"
-      style="background-image: url('{{ page.hero | relative_url }}')"
-    >
-      <div class="hero-overlay">
-        <div class="wrap">
-          <p class="eyebrow">{{ page.hero_label | default: 'PORTFOLIO' }}</p>
-
-          <h1>{{ page.title }}</h1>
-
-          {% if page.subtitle %}
-
-          <p>{{ page.subtitle }}</p>
-
-          {% endif %}
+      <section class="hero" style="background-image: url('{{ page.hero | relative_url }}')">
+        <div class="hero-overlay">
+          <div class="wrap hero-inner">
+            <p class="eyebrow">{{ page.hero_label | default: 'Projects' }}</p>
+            <h1>{{ page.title }}</h1>
+            {% if page.subtitle %}<p class="hero-subtitle">{{ page.subtitle }}</p>{% endif %}
+          </div>
         </div>
-      </div>
-    </section>
-
+      </section>
     {% endif %}
-
-    <!-- =========================
-       MAIN CONTENT
-       ========================= -->
 
     <main class="wrap page-shell">{{ content }}</main>
 
-    <!-- =========================
-       FOOTER
-       ========================= -->
-
-    <footer>
+    <footer class="site-footer">
       <div class="wrap footer-grid">
-        <!-- Footer About -->
-
         <div>
-          <strong>MO.</strong>
-
-          <p>
-            Building useful digital experiences with thoughtful design and clean
-            code.
-          </p>
+          <p class="footer-brand">MO<span>.</span></p>
+          <p>Electronics, embedded systems, automation, and intelligent devices.</p>
         </div>
-
-        <!-- Footer Social -->
-
         <div>
-          <strong>Connect</strong>
-
+          <p class="footer-heading">Explore</p>
+          <p><a href="{{ '/about/' | relative_url }}">About</a> · <a href="{{ '/projects/' | relative_url }}">Projects</a> · <a href="{{ '/contact/' | relative_url }}">Contact</a></p>
+        </div>
+        <div>
+          <p class="footer-heading">Connect</p>
           <p>
-            {% if site.data.socialmedia.github %}
-
-            <a
-              href="{{ site.data.socialmedia.github.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-
-            <br />
-
-            {% endif %} {% if site.data.socialmedia.linkedin %}
-
-            <a
-              href="{{ site.data.socialmedia.linkedin.url }}"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </a>
-
-            <br />
-
-            {% endif %} {% if site.data.socialmedia.email %}
-
-            <a href="{{ site.data.socialmedia.email.url }}"> Email </a>
-
-            {% endif %}
+            {% for network in site.data.socialmedia %}
+              {% assign item = network[1] %}
+              <a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener noreferrer"{% endunless %}>{{ item.label }}</a>{% unless forloop.last %} · {% endunless %}
+            {% endfor %}
           </p>
         </div>
       </div>
-
-      <!-- Copyright -->
-
-      <div class="copyright">
-        © {{ site.time | date: '%Y' }} Mo. Built with Jekyll.
-      </div>
+      <div class="copyright">© {{ site.time | date: '%Y' }} {{ site.author.name }} · Built with Jekyll</div>
     </footer>
   </body>
 </html>

@@ -5,34 +5,24 @@ summary: An embedded object detection system for smart storage, combining machin
 role: Final Project · Embedded AI
 stack: YOLO, FOMO, MQTT, Embedded Systems, Computer Vision
 short: EMBEDDED AI
+visual: visual-ai
 ---
-
 ### Overview
 
-This project focuses on developing an electronics object detection
-algorithm for a smart storage system.
+This project focuses on developing an electronics object detection algorithm for a smart storage system.
 
-The system combines machine learning, embedded devices, and
-MQTT-based communication to support object detection and
-data exchange between the local computer and the embedded
-device.
+The system combines machine learning, embedded devices, and MQTT-based communication to support object detection and data exchange between the local computer and the embedded device.
 
 ### My Role
 
-As part of this final project, I worked on the development and
-testing of the integrated embedded detection system, including
-the implementation of machine learning models and system
-communication.
+As part of this final project, I worked on the development and testing of the integrated embedded detection system, including the implementation of machine learning models and system communication.
 
 ### Highlights
 
 - Implemented YOLO and FOMO models for object detection.
-- Developed MQTT-based communication between the local
-  computer and the embedded device.
-- Designed a user interface for managing detection inputs,
-  thresholds, and output folders.
-- Integrated the machine learning and communication components
-  into the overall embedded system.
+- Developed MQTT-based communication between the local computer and the embedded device.
+- Designed a user interface for managing detection inputs, thresholds, and output folders.
+- Integrated the machine learning and communication components into the overall embedded system.
 
 ### Technologies
 
@@ -45,6 +35,4 @@ communication.
 
 ### Project Context
 
-This project was developed as a final project during the
-seventh semester and took approximately three to four months
-to complete.
+This project was developed as a final project during the seventh semester and took approximately three to four months to complete.

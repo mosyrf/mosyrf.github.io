@@ -5,16 +5,13 @@ summary: A GPS tracking prototype developed from breadboard assembly to custom P
 role: Project Based Learning · Semester 5
 stack: GPS, Microcontroller, PCB Design, 3D Modeling
 short: GPS TRACKER
+visual: visual-gps
 ---
-
 ### Overview
 
-This project involved the development of a GPS tracking system,
-starting from an initial breadboard prototype and progressing
-toward a custom PCB and enclosure concept.
+This project involved the development of a GPS tracking system, starting from an initial breadboard prototype and progressing toward a custom PCB and enclosure concept.
 
-The project provided hands-on experience across electronic
-assembly, PCB layout, and mechanical enclosure design.
+The project provided hands-on experience across electronic assembly, PCB layout, and mechanical enclosure design.
 
 ### Development Process
 
@@ -30,8 +27,7 @@ The system was developed through several stages:
 - Built and tested the initial system using a breadboard.
 - Designed the PCB layout for the tracking system.
 - Developed a 3D enclosure model for the electronic components.
-- Considered physical protection of the electronic components
-  through the enclosure design.
+- Considered physical protection of the electronic components through the enclosure design.
 
 ### Technologies
 
@@ -43,5 +39,4 @@ The system was developed through several stages:
 
 ### Project Context
 
-This project was developed as part of Project Based Learning
-during the fifth semester.
+This project was developed as part of Project Based Learning during the fifth semester.

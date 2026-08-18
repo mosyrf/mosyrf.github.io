@@ -5,16 +5,13 @@ summary: An introductory robotics project covering system design, simulation, pr
 role: Project Based Learning · Semester 1–2
 stack: Robotics, Electronics, Programming, Simulation
 short: ROBOTICS
+visual: visual-robot
 ---
-
 ### Overview
 
-The Line Follower Robot was an introductory robotics project
-focused on developing foundational skills in electronics,
-programming, system design, and robotic assembly.
+The Line Follower Robot was an introductory robotics project focused on developing foundational skills in electronics, programming, system design, and robotic assembly.
 
-The project covered the development process from initial design
-and simulation through programming, assembly, and maintenance.
+The project covered the development process from initial design and simulation through programming, assembly, and maintenance.
 
 ### Development Process
 
@@ -39,9 +36,7 @@ The project involved several stages:
 - Electronics
 - Programming
 - System Simulation
-- Electronic Assembly
 
 ### Project Context
 
-This project was developed as part of Project Based Learning
-during semesters one and two.
+This project was developed as part of Project Based Learning during semesters one and two.

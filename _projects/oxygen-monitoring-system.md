@@ -5,16 +5,13 @@ summary: An embedded oxygen monitoring system using STM32, industrial communicat
 role: Project Based Learning · Semester 3–4
 stack: STM32, RS485, Modbus RTU, Modbus TCP/IP, Ethernet, I2C
 short: OXYGEN MONITOR
+visual: visual-oxygen
 ---
-
 ### Overview
 
-This project focuses on developing an oxygen monitoring system
-using an STM32 Blue Pill and an LSU 4.x sensor.
+This project focuses on developing an oxygen monitoring system using an STM32 Blue Pill and a LSU 4.x sensor.
 
-The system combines sensor integration, industrial communication
-protocols, power management, and local display capabilities to
-support oxygen monitoring.
+The system combines sensor integration, industrial communication protocols, power management, and local display capabilities to support oxygen monitoring.
 
 ### System Architecture
 
@@ -29,8 +26,7 @@ The monitoring system uses multiple communication layers:
 - Developed the monitoring system using an STM32 Blue Pill.
 - Integrated the LSU 4.x sensor.
 - Implemented RS485 Modbus RTU communication between controllers.
-- Implemented Ethernet Modbus TCP/IP communication for
-  transmitting data to a PC web server.
+- Implemented Ethernet Modbus TCP/IP communication for transmitting data to a PC web server.
 - Designed the power system using an LM2596 buck converter.
 - Integrated a 1602 LCD using I2C for local monitoring.
 
@@ -48,5 +44,4 @@ The monitoring system uses multiple communication layers:
 
 ### Project Context
 
-This project was developed as part of Project Based Learning
-during semesters three and four.
+This project was developed as part of Project Based Learning during semesters three and four.

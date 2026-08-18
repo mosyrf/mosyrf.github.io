@@ -1,8 +1,11 @@
 github:
+  label: "GitHub"
   url: "https://github.com/mosyrf"
 
 linkedin:
-  url: "https://www.linkedin.com/in/muhammad-syarif-nur-rohman-5122b4220/"
+  label: "LinkedIn"
+  url: "https://www.linkedin.com/in/muhammad-syarif-nur-rohman-5122b422/"
 
 email:
+  label: "Email"
   url: "mailto:muhammadsyarif354@gmail.com"
