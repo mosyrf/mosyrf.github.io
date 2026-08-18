@@ -1,11 +1,16 @@
 ---
 layout: page
 title: Projects
-kicker: "SELECTED PROJECTS"
+kicker: "ALL PROJECTS"
 permalink: /projects/
 ---
 
-A collection of academic and project-based work across embedded systems, electronics, automation, robotics, and intelligent devices.
+<div class="projects-intro">
+  <div>
+    <p class="eyebrow">MY ENGINEERING WORK THROUGHOUT COLLEGE LIFE</p>
+    <h2>Projects built across embedded systems, electronics, automation, and intelligent devices.</h2>
+  </div>
+</div>
 
 <div class="project-grid project-grid-all">
   {% for project in site.projects %}
@@ -19,7 +24,11 @@ A collection of academic and project-based work across embedded systems, electro
         <p class="project-meta">{{ project.role }}</p>
         <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
         <p>{{ project.summary }}</p>
-        <a class="read-more" href="{{ project.url | relative_url }}">Read case study →</a>
+        <div class="project-tags">
+          {% assign tags = project.stack | split: ',' %}
+          {% for tag in tags limit: 4 %}<span>{{ tag | strip }}</span>{% endfor %}
+        </div>
+        <a class="read-more" href="{{ project.url | relative_url }}">Read case study <span>→</span></a>
       </div>
     </article>
   {% endfor %}

@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<article class="content-layout {% if page.sidebar %}with-sidebar{% endif %}">
+<article class="content-layout {% if page.sidebar %}with-sidebar{% endif %} {{ page.page_style | default: 'standard-page' }}">
   <section class="content">
     <div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / {{ page.title }}</div>
     <p class="eyebrow">{{ page.kicker | default: 'ABOUT THE WORK' }}</p>

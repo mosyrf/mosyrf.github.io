@@ -1,34 +1,46 @@
 ---
 layout: default
 ---
-<article class="content-layout with-sidebar project-detail">
-  <section class="content">
-    <div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.title }}</div>
+<article class="project-detail">
+  <div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.title }}</div>
+
+  <header class="project-detail-header">
     <p class="eyebrow">PROJECT CASE STUDY</p>
     <h1>{{ page.title }}</h1>
-
-    <div class="project-hero-card {{ page.visual | default: 'visual-default' }}">
-      <span class="visual-number">PROJECT</span>
-      <span class="visual-short">{{ page.short }}</span>
-      <span class="visual-mark"></span>
-    </div>
-
     <p class="lead">{{ page.summary }}</p>
-    {{ content }}
-  </section>
+  </header>
 
-  <aside class="sidebar">
-    <div class="sidebar-block">
-      <p class="sidebar-label">Project</p>
-      <h3>{{ page.role }}</h3>
-      <p><strong>Stack</strong><br />{{ page.stack }}</p>
-    </div>
-    {% if page.url_external %}
-      <a class="button button-full" href="{{ page.url_external }}" target="_blank" rel="noopener noreferrer">Visit project</a>
-    {% endif %}
-    <div class="sidebar-block">
-      <p class="sidebar-label">Next</p>
-      <a href="{{ '/projects/' | relative_url }}">Back to projects →</a>
-    </div>
-  </aside>
+  <div class="project-detail-grid">
+    <main class="project-detail-main">
+      <div class="project-hero-card {{ page.visual | default: 'visual-default' }}">
+        <span class="visual-number">PROJECT</span>
+        <span class="visual-short">{{ page.short }}</span>
+        <span class="visual-mark"></span>
+      </div>
+      <div class="project-content">
+        {{ content }}
+      </div>
+    </main>
+
+    <aside class="project-sidebar">
+      <div class="sidebar-block">
+        <p class="sidebar-label">Role</p>
+        <h3>{{ page.role }}</h3>
+      </div>
+      <div class="sidebar-block">
+        <p class="sidebar-label">Technologies</p>
+        <div class="project-tags project-tags-stack">
+          {% assign tags = page.stack | split: ',' %}
+          {% for tag in tags %}<span>{{ tag | strip }}</span>{% endfor %}
+        </div>
+      </div>
+      {% if page.url_external %}
+        <a class="button button-full" href="{{ page.url_external }}" target="_blank" rel="noopener noreferrer">Visit project ↗</a>
+      {% endif %}
+      <div class="sidebar-block sidebar-next">
+        <p class="sidebar-label">Explore</p>
+        <a href="{{ '/projects/' | relative_url }}">All projects →</a>
+      </div>
+    </aside>
+  </div>
 </article>
