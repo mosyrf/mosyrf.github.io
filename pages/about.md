@@ -8,7 +8,7 @@ permalink: /about/
 
 ## Hello!
 
-I'm Mo., an Electronics Engineering student with a strong interest in embedded systems, electronics, industrial automation, and intelligent systems.
+I'm Muhammad Syarif Nur Rohman, an Electronics Engineering student with a strong interest in embedded systems, electronics, industrial automation, and intelligent systems.
 
 My work focuses on building systems where hardware, software, and data work together to solve practical problems.
 

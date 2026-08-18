@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Projects
-kicker: "SELECTED WORK"
+kicker: "SELECTED PROJECTS"
 permalink: /projects/
 ---
 

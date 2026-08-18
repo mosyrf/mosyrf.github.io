@@ -1,20 +1,13 @@
 ---
 layout: default
 ---
-
 <article class="content-layout with-sidebar project-detail">
   <section class="content">
-    <div class="breadcrumbs">
-      <a href="{{ '/' | relative_url }}">Home</a> /
-      <a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.title
-      }}
-    </div>
+    <div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.title }}</div>
     <p class="eyebrow">PROJECT CASE STUDY</p>
     <h1>{{ page.title }}</h1>
 
-    <div
-      class="project-hero-card {{ page.visual | default: 'visual-default' }}"
-    >
+    <div class="project-hero-card {{ page.visual | default: 'visual-default' }}">
       <span class="visual-number">PROJECT</span>
       <span class="visual-short">{{ page.short }}</span>
       <span class="visual-mark"></span>
@@ -31,17 +24,11 @@ layout: default
       <p><strong>Stack</strong><br />{{ page.stack }}</p>
     </div>
     {% if page.url_external %}
-    <a
-      class="button button-full"
-      href="{{ page.url_external }}"
-      target="_blank"
-      rel="noopener noreferrer"
-      >Visit project</a
-    >
+      <a class="button button-full" href="{{ page.url_external }}" target="_blank" rel="noopener noreferrer">Visit project</a>
     {% endif %}
     <div class="sidebar-block">
       <p class="sidebar-label">Next</p>
-      <a href="{{ '/projects/' | relative_url }}">Back to Projects →</a>
+      <a href="{{ '/projects/' | relative_url }}">Back to projects →</a>
     </div>
   </aside>
 </article>

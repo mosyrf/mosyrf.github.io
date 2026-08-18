@@ -7,28 +7,34 @@ layout: default
     <h1>{{ page.heading }}</h1>
     <p class="lead">{{ page.description }}</p>
     <div class="intro-actions">
-      <a class="button" href="{{ '/projects/' | relative_url }}">Explore my work</a>
-      <a class="text-link" href="{{ '/about/' | relative_url }}">More about me →</a>
+      <a class="button" href="{{ '/projects/' | relative_url }}">Explore projects <span aria-hidden="true">→</span></a>
+      <a class="text-link" href="{{ '/about/' | relative_url }}">More about me <span aria-hidden="true">↗</span></a>
     </div>
   </div>
+
   <div class="intro-art" aria-hidden="true">
     <div class="art-grid"></div>
+    <div class="art-axis art-axis-x"></div>
+    <div class="art-axis art-axis-y"></div>
     <div class="art-node art-node-1"></div>
     <div class="art-node art-node-2"></div>
     <div class="art-node art-node-3"></div>
     <div class="art-line art-line-1"></div>
     <div class="art-line art-line-2"></div>
-    <div class="art-chip">EMBEDDED<br />SYSTEMS</div>
+    <div class="art-chip"><span>MO.</span><small>EMBEDDED<br />SYSTEMS</small></div>
+    <div class="art-tag art-tag-a">MCU</div>
+    <div class="art-tag art-tag-b">I/O</div>
+    <div class="art-tag art-tag-c">DATA</div>
   </div>
 </section>
 
 <section class="widgets">
   {% for item in page.widgets %}
     <article class="widget">
-      <div class="widget-icon">{{ item.icon }}</div>
+      <div class="widget-index">{{ item.icon }}</div>
       <h2>{{ item.title }}</h2>
       <p>{{ item.text }}</p>
-      <a href="{{ item.url | relative_url }}">{{ item.link }} →</a>
+      <a href="{{ item.url | relative_url }}">{{ item.link }} <span aria-hidden="true">→</span></a>
     </article>
   {% endfor %}
 </section>
@@ -36,10 +42,10 @@ layout: default
 <section class="featured">
   <div class="section-heading split-heading">
     <div>
-      <p class="eyebrow">SELECTED WORK</p>
-      <h2>Projects that connect hardware and software</h2>
+      <p class="eyebrow">SELECTED PROJECTS</p>
+      <h2>Work across embedded systems, electronics, and intelligent devices.</h2>
     </div>
-    <a class="text-link" href="{{ '/projects/' | relative_url }}">View all projects →</a>
+    <a class="text-link" href="{{ '/projects/' | relative_url }}">View all projects <span aria-hidden="true">↗</span></a>
   </div>
 
   <div class="project-grid">
@@ -50,14 +56,23 @@ layout: default
           <span class="visual-number">0{{ forloop.index }}</span>
           <span class="visual-short">{{ project.short }}</span>
           <span class="visual-mark"></span>
+          <span class="visual-arrow" aria-hidden="true">↗</span>
         </a>
         <div class="project-body">
           <p class="project-meta">{{ project.role }}</p>
           <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
           <p>{{ project.summary }}</p>
-          <a class="read-more" href="{{ project.url | relative_url }}">Read case study →</a>
+          <a class="read-more" href="{{ project.url | relative_url }}">Read case study <span aria-hidden="true">→</span></a>
         </div>
       </article>
     {% endfor %}
   </div>
+</section>
+
+<section class="home-cta">
+  <div>
+    <p class="eyebrow">LET'S CONNECT</p>
+    <h2>Have a project, collaboration, or technical idea in mind?</h2>
+  </div>
+  <a class="button button-light" href="{{ '/contact/' | relative_url }}">Get in touch <span aria-hidden="true">↗</span></a>
 </section>

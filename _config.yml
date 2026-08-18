@@ -1,16 +1,32 @@
-title: "Project Portfolio"
-description: "My Project Portfolio inspired by Feeling Responsive Template"
+title: "Mo. — Electronics & Embedded Systems"
+description: "Portfolio of Mo., an Electronics Engineering student focused on embedded systems, electronics, industrial automation, and intelligent systems."
 url: "https://mosyrf.github.io"
 baseurl: ""
+lang: "en"
+
+logo: "MO."
 
 author:
-  name: "Mo"
-  bio: "Electronics Enthusiast"
+  name: "Muhammad Syarif Nur Rohman"
+  short_name: "Mo."
+  bio: "Electronics Engineering student focused on embedded systems, hardware, automation, and intelligent devices."
 
 markdown: kramdown
 permalink: /:categories/:title/
-exclude: ["vendor", "README.md"]
+exclude:
+  - vendor
+  - README.md
+  - site
+  - .jekyll-cache
+
 collections:
   projects:
     output: true
     permalink: /projects/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: project

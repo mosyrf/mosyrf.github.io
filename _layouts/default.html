@@ -32,7 +32,7 @@
       <section class="hero" style="background-image: url('{{ page.hero | relative_url }}')">
         <div class="hero-overlay">
           <div class="wrap hero-inner">
-            <p class="eyebrow">{{ page.hero_label | default: 'Projects' }}</p>
+            <p class="eyebrow eyebrow-light">{{ page.hero_label | default: 'SELECTED WORK' }}</p>
             <h1>{{ page.title }}</h1>
             {% if page.subtitle %}<p class="hero-subtitle">{{ page.subtitle }}</p>{% endif %}
           </div>
@@ -50,16 +50,20 @@
         </div>
         <div>
           <p class="footer-heading">Explore</p>
-          <p><a href="{{ '/about/' | relative_url }}">About</a> · <a href="{{ '/projects/' | relative_url }}">Projects</a> · <a href="{{ '/contact/' | relative_url }}">Contact</a></p>
+          <nav class="footer-nav" aria-label="Explore">
+            <a href="{{ '/about/' | relative_url }}">About</a>
+            <a href="{{ '/projects/' | relative_url }}">Projects</a>
+            <a href="{{ '/contact/' | relative_url }}">Contact</a>
+          </nav>
         </div>
         <div>
           <p class="footer-heading">Connect</p>
-          <p>
+          <div class="footer-social">
             {% for network in site.data.socialmedia %}
               {% assign item = network[1] %}
-              <a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener noreferrer"{% endunless %}>{{ item.label }}</a>{% unless forloop.last %} · {% endunless %}
+              <a href="{{ item.url }}"{% unless item.url contains 'mailto:' %} target="_blank" rel="noopener noreferrer"{% endunless %}>{{ item.label }}</a>
             {% endfor %}
-          </p>
+          </div>
         </div>
       </div>
       <div class="copyright">© {{ site.time | date: '%Y' }} {{ site.author.name }} · Built with Jekyll</div>
