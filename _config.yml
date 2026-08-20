@@ -1,14 +1,14 @@
-title: "Mo. — Electronics & Embedded Systems"
-description: "Portfolio of Mo., an Electronics Engineering student focused on embedded systems, electronics, industrial automation, and intelligent systems."
+title: "Syare1P Industries — Electronics & Embedded Systems"
+description: "Portfolio of Muhammad Syarif Nur Rohman, an Electronics Engineering student focused on embedded systems, electronics, industrial automation, and intelligent systems."
 url: "https://mosyrf.github.io"
 baseurl: ""
 lang: "en"
 
-logo: "MO."
+logo: "MO"
 
 author:
   name: "Muhammad Syarif Nur Rohman"
-  short_name: "Mo."
+  short_name: "Mo"
   bio: "Electronics Engineering student focused on embedded systems, hardware, automation, and intelligent devices."
 
 markdown: kramdown

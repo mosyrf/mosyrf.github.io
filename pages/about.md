@@ -9,7 +9,7 @@ permalink: /about/
 
 <div class="about-intro">
   <p class="about-intro-title">Building systems where hardware, software, and intelligence work together.</p>
-  <p class="about-intro-copy">I'm Mo., an Electronics Engineering student with a strong interest in embedded systems, electronics, industrial automation, and intelligent systems.</p>
+  <p class="about-intro-copy">I'm Muhammad Syarif Nur Rohman, an Electronics Engineering student with a strong interest in embedded systems, electronics, industrial automation, and intelligent systems.</p>
 </div>
 
 <div class="about-highlights">

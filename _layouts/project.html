@@ -1,6 +1,7 @@
 ---
 layout: default
 ---
+
 <article class="project-detail">
   <div class="breadcrumbs"><a href="{{ '/' | relative_url }}">Home</a> / <a href="{{ '/projects/' | relative_url }}">Projects</a> / {{ page.title }}</div>
 
@@ -12,14 +13,19 @@ layout: default
 
   <div class="project-detail-grid">
     <main class="project-detail-main">
-      <div class="project-hero-card {{ page.visual | default: 'visual-default' }}">
-        <span class="visual-number">PROJECT</span>
-        <span class="visual-short">{{ page.short }}</span>
-        <span class="visual-mark"></span>
-      </div>
-      <div class="project-content">
-        {{ content }}
-      </div>
+      {% if page.image %}
+        <figure class="project-hero-image">
+          <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+        </figure>
+      {% else %}
+        <div class="project-hero-card {{ page.visual | default: 'visual-default' }}">
+          <span class="visual-number">PROJECT</span>
+          <span class="visual-short">{{ page.short }}</span>
+          <span class="visual-mark"></span>
+        </div>
+      {% endif %}
+
+      <div class="project-content">{{ content }}</div>
     </main>
 
     <aside class="project-sidebar">
