@@ -1965,3 +1965,268 @@ a:hover {
     margin-bottom: 6px;
   }
 }
+
+/* =========================================================
+   PROJECT CAROUSEL
+   ========================================================= */
+
+.project-carousel {
+  --carousel-gap: 28px;
+  --carousel-items: 3;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  margin-top: 42px;
+}
+
+/* ---------------------------------------------------------
+   VIEWPORT
+   --------------------------------------------------------- */
+
+.project-carousel-viewport {
+  width: 100%;
+  overflow: hidden;
+}
+
+/* ---------------------------------------------------------
+   TRACK
+   --------------------------------------------------------- */
+
+.project-carousel-track {
+  display: flex;
+
+  gap: var(--carousel-gap);
+
+  width: 100%;
+
+  transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  will-change: transform;
+}
+
+/* ---------------------------------------------------------
+   PROJECT CARD
+   --------------------------------------------------------- */
+
+.project-carousel .project-card {
+  flex: 0 0
+    calc(
+      (100% - (var(--carousel-gap) * (var(--carousel-items) - 1))) /
+        var(--carousel-items)
+    );
+
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------
+   CONTROLS
+   --------------------------------------------------------- */
+
+.carousel-control {
+  position: absolute;
+
+  z-index: 5;
+
+  top: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid var(--line);
+  border-radius: 50%;
+
+  background: var(--white);
+
+  color: var(--blue);
+
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transform: translateY(-50%);
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.carousel-control:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+
+  color: var(--white);
+
+  transform: translateY(-50%) scale(1.05);
+}
+
+.carousel-control:focus-visible {
+  outline: 3px solid var(--green);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------
+   PREVIOUS / NEXT POSITION
+   --------------------------------------------------------- */
+
+.carousel-prev {
+  left: -21px;
+}
+
+.carousel-next {
+  right: -21px;
+}
+
+/* ---------------------------------------------------------
+   DISABLED CONTROL
+   --------------------------------------------------------- */
+
+.carousel-control:disabled {
+  opacity: 0.3;
+
+  cursor: default;
+
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------
+   DOTS
+   --------------------------------------------------------- */
+
+.carousel-dots {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  margin-top: 28px;
+}
+
+.carousel-dot {
+  width: 7px;
+  height: 7px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: #c8c8c8;
+
+  cursor: pointer;
+
+  transition:
+    width 0.25s ease,
+    background 0.25s ease;
+}
+
+.carousel-dot.is-active {
+  width: 22px;
+
+  border-radius: 10px;
+
+  background: var(--green);
+}
+
+.carousel-dot:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+/* ---------------------------------------------------------
+   EMPTY STATE
+   --------------------------------------------------------- */
+
+.project-empty {
+  margin-top: 36px;
+
+  color: #777;
+
+  font-size: 14px;
+  font-style: italic;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 980px) {
+  .project-carousel {
+    --carousel-items: 2;
+  }
+
+  .carousel-prev {
+    left: -16px;
+  }
+
+  .carousel-next {
+    right: -16px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 680px) {
+  .project-carousel {
+    --carousel-items: 1;
+
+    margin-top: 32px;
+  }
+
+  .project-carousel-track {
+    gap: 0;
+  }
+
+  .project-carousel .project-card {
+    flex: 0 0 100%;
+  }
+
+  .carousel-control {
+    width: 38px;
+    height: 38px;
+
+    background: rgba(255, 255, 255, 0.96);
+  }
+
+  .carousel-prev {
+    left: 10px;
+  }
+
+  .carousel-next {
+    right: 10px;
+  }
+
+  .carousel-dots {
+    margin-top: 22px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-carousel-track {
+    transition: none;
+  }
+
+  .carousel-control,
+  .carousel-dot {
+    transition: none;
+  }
+}

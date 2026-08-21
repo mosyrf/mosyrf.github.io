@@ -2,11 +2,15 @@
 layout: project
 title: Oxygen Monitoring System
 summary: An embedded oxygen monitoring system using STM32, industrial communication protocols, and local data visualization.
+year: 2023
+category: Industrial Automation
+featured: false
 role: Project Based Learning · Semester 3–4
 stack: STM32, RS485, Modbus RTU, Modbus TCP/IP, Ethernet, I2C
 short: OXYGEN MONITOR
 visual: visual-oxygen
 ---
+
 ### Overview
 
 This project focuses on developing an oxygen monitoring system using an STM32 Blue Pill and a LSU 4.x sensor.

@@ -2,6 +2,9 @@
 layout: project
 title: Line Follower Robot
 summary: An introductory robotics project covering mechanical design, electronics, PCB development, programming, assembly, and system integration.
+year: 2022
+category: Robotics
+featured: true
 role: Project Based Learning · Semester 1–2
 stack: Robotics, Electronics, PCB Design, Programming
 short: ROBOTICS

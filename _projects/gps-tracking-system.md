@@ -2,11 +2,15 @@
 layout: project
 title: GPS Tracking System
 summary: A GPS tracking prototype developed from breadboard assembly to custom PCB design and 3D enclosure development.
+year: 2024
+category: Embedded Systems
+featured: true
 role: Project Based Learning · Semester 5
 stack: GPS, Microcontroller, PCB Design, 3D Modeling
 short: GPS TRACKER
 visual: visual-gps
 ---
+
 ### Overview
 
 This project involved the development of a GPS tracking system, starting from an initial breadboard prototype and progressing toward a custom PCB and enclosure concept.

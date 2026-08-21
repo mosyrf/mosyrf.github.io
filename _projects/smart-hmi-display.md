@@ -2,11 +2,15 @@
 layout: project
 title: Smart HMI Display
 summary: An IoT-based Human Machine Interface for monitoring and controlling multiple hardware devices through real-time data.
+year: 2024
+category: IoT & HMI
+featured: true
 role: Project Based Learning · Semester 6
 stack: MQTT, HMI, IoT, Sensors, GUI
 short: SMART HMI
 visual: visual-hmi
 ---
+
 ### Overview
 
 Smart HMI Display is an IoT-based Human Machine Interface designed to monitor and control multiple hardware devices through a graphical interface.

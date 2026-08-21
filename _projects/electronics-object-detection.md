@@ -2,11 +2,15 @@
 layout: project
 title: Electronics Object Detection Algorithm for Smart Storage System
 summary: An embedded object detection system for smart storage, combining machine learning, embedded devices, and MQTT-based communication.
+year: 2025
+category: Embedded AI
+featured: true
 role: Final Project · Embedded AI
 stack: YOLO, FOMO, MQTT, Embedded Systems, Computer Vision
 short: EMBEDDED AI
 visual: visual-ai
 ---
+
 ### Overview
 
 This project focuses on developing an electronics object detection algorithm for a smart storage system.
